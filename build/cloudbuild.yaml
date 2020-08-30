@@ -2,8 +2,8 @@ steps:
 # Test
 - name: golang
   id: test
-  args: ['go', 'test', '../cmd/backend']
+  args: ['go', 'test', './cmd/backend']
 # Build
 - name: golang
   id: build
-  args: ['go', 'build', '../cmd/backend']
+  args: ['go', 'build', './cmd/backend']
