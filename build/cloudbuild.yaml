@@ -13,8 +13,8 @@ steps:
   args:
   - functions
   - deploy
-  - go-whiskey-backend
-  - --source=./cmd/functions/
+  - go-hello-http
+  - --source=./cmd/functions/hello_http
   - --trigger-http
   - --runtime=go113
   - --entry-point=HelloHTTP
