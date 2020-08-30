@@ -13,7 +13,7 @@ steps:
   args:
   - functions
   - deploy
-  - goWhiskeyBackend
+  - go-whiskey-backend
   - --source=./cmd/backend
   - --trigger-http
   - --runtime=go113
