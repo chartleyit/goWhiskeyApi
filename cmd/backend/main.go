@@ -3,5 +3,9 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("Go Whiskey API backend")
+	fmt.Println(start())
+}
+
+func start() string {
+	return "Go Whiskey API backend"
 }
