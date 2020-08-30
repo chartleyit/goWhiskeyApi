@@ -14,7 +14,7 @@ steps:
   - functions
   - deploy
   - go-whiskey-backend
-  - --source=./cmd/functions/hello_http.go
+  - --source=./cmd/functions/
   - --trigger-http
   - --runtime=go113
   - --entry-point=HelloHTTP
