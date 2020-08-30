@@ -1,4 +1,4 @@
-package main
+package p
 
 import (
 	"encoding/json"
@@ -6,14 +6,6 @@ import (
 	"html"
 	"net/http"
 )
-
-func main() {
-	fmt.Println(start())
-}
-
-func start() string {
-	return "Go Whiskey API backend"
-}
 
 func HelloHTTP(w http.ResponseWriter, r *http.Request) {
 	var d struct {

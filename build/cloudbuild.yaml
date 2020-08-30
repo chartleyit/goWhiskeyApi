@@ -1,0 +1,20 @@
+steps:
+# Test
+- name: golang
+  id: test
+  args: ['go', 'test', '-v', './cmd/backend', '-coverprofile', '/dev/null']
+# Build
+- name: golang
+  id: build
+  args: ['go', 'build', './cmd/backend']
+# Deploy to google cloud functions
+- name: 'gcr.io/cloud-builders/gcloud'
+  id: deploy
+  args:
+  - functions
+  - deploy
+  - go-hello-http
+  - --source=./cmd/functions/hello_http
+  - --trigger-http
+  - --runtime=go113
+  - --entry-point=HelloHTTP
