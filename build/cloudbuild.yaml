@@ -2,8 +2,18 @@ steps:
 # Test
 - name: golang
   id: test
-  args: ['go', 'test', './cmd/backend']
+  args: ['go', 'test', '-v', './cmd/backend', '-coverprofile', '/dev/null']
 # Build
 - name: golang
   id: build
   args: ['go', 'build', './cmd/backend']
+# Deploy to google cloud functions
+- name: 'gcr.io/cloud-builders/gcloud'
+  args:
+  - functions
+  - deploy
+  - goWhiskeyBackend
+  - --source = ./cmd/backend
+  - --trigger-http
+  - --runtime = go113
+  - --entry-point = HelloHTTP
